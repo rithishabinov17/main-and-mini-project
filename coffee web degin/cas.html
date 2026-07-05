@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Carousel - One File</title>
+
+<style>
+
+  body {
+    background-color: rosybrown;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: Arial, sans-serif;
+  }
+   .navbar{
+
+  
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgb(52,26,12);
+    padding:10px 30px;
+    position: absolute;
+    top: 0px;
+    width: 210vh;
+}
+
+/* Logo Section */
+.logo{
+    display:flex;
+    align-items:center;
+    color:white;
+}
+
+.logo img{
+    width:40px;
+    height:40px;
+    margin-right:10px;
+}
+
+.logo span{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* Menu */
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    margin-left:20px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+}
+
+.nav-links a:hover{
+    color:orange;
+}
+.a1{
+    width: 400px;
+    height: 400px;
+    margin-left: 800px;
+    margin-top: -350px;
+}
+
+  .carousel {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+margin-left: 100px;  
+}
+
+
+  .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+    
+  }
+
+  .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    font-size: 28px;
+    padding: 10px 14px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: rgba(0,0,0,0.8);
+  }
+
+  .prev { left: 0px;color: blue; }
+  .next { right: 0px; color: blue; }
+select {
+  
+  font-size: 15px;
+  margin-left: 10px;
+
+}
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <img src="./image/latte-coffee-removebg-preview.png" alt="Logo">
+        <span>Coffee</span>
+    </div>
+
+    <!-- Menu -->
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+         <li><a href="menu.html">Menu</a></li>
+        <li><a href="#">Testimonials</a></li>
+      <select onchange="optionClick(this.value)">
+    <option value="">-- Select --</option>
+    <option value="Espresso">Espresso</option>
+    <option value="Latte">Latte</option>
+    <option value="Cappuccino">Cappuccino</option>
+  </select>
+      </nav>
+<br>
+<div class="carousel">
+  <button class="btn prev">❮</button>
+  <img id="slide" src="./image/c3.jpg">
+  <button class="btn next">❯</button>
+</div>
+
+<script>
+  const images = [
+  
+    "./image/d1.jpg",
+    "./image/d2.jpg",
+    "./image/d3.jpg",
+    "./image/d4.jpg",
+    "./image/d5.jpg"
+    
+  ];
+
+  let index = 0;
+  const slide = document.getElementById("slide");
+
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % images.length;
+    slide.src = images[index];
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + images.length) % images.length;
+    slide.src = images[index];
+
+  };
+  
+    // order
+    
+  function optionClick(value) {
+      if (value !== "") {
+        alert("OK 👍 You selected " + value);
+      }
+    }
+</script>
+
+</body>
+</html>

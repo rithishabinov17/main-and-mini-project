@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logo + Navbar</title>
+<link rel="stylesheet" href="index1.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <img src="./image/latte-coffee-removebg-preview.png" alt="Logo">
+        <span>Coffee</span>
+    </div>
+
+    <!-- Menu -->
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+         <li><a href="menu.html">Menu</a></li>
+        <li><a href="cas.html">Testimonials</a></li>
+          <br>
+    
+      <select onchange="optionClick(this.value)">
+    <option value="">-- Select --</option>
+    <option value="Espresso">Espresso</option>
+    <option value="Latte">Latte</option>
+    <option value="Cappuccino">Cappuccino</option>
+  </select>
+    </ul>
+    
+</nav>
+<div id="b">
+
+<h2>Best Coffee</h2>
+<h3>make your day great with our  <br>special coffee</h3>
+<p>
+    welcome to our coffee paradise where every bean tells <br>
+    a story and every cup sparks joybr
+    <br>
+<br>
+Coffee is a beverage brewed from roasted, ground coffee beans. <br>Darkly colored, bitter, and slightly acidic <br><br> coffee has a stimulating effect on humans, primarily due to its caffeine content, <br>but decaffeinated coffee is also commercially available. <br>There are also various coffee substitutes.
+</p>
+<br>
+<button  onclick="orderBtn()">order now</button>
+<button onclick="openContact()">Contact us</button>
+</div>
+<img  class="a1" src="./image/download-removebg-preview.png" alt="" >
+<script src="index.js"></script>
+</body>
+</html>

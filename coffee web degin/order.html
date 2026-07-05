@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order Menu</title>
+
+<style>
+body{
+  font-family: Arial;
+  background:#f5f5f5;
+}
+
+.menu{
+  width:300px;
+  margin:30px auto;
+  background:white;
+  padding:15px;
+  border-radius:8px;
+}
+
+.item{
+  display:flex;
+  justify-content:space-between;
+  margin:10px 0;
+}
+
+button{
+  background:green;
+  color:white;
+  border:none;
+  padding:5px 10px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:darkgreen;
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu">
+  <h2>🍽️ Order Menu</h2>
+
+  <div class="item">
+    <span>Burger - ₹100</span>
+    <button onclick="order('Burger')">Order</button>
+  </div>
+
+  <div class="item">
+    <span>Pizza - ₹200</span>
+    <button onclick="order('Pizza')">Order</button>
+  </div>
+
+  <div class="item">
+    <span>Sandwich - ₹80</span>
+    <button onclick="order('Sandwich')">Order</button>
+  </div>
+
+  <p id="result"></p>
+</div>
+
+<script>
+function order(item){
+  document.getElementById("result").innerText =
+    item + " ordered successfully!";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us</title>
+
+<style>
+body{
+  font-family: Arial;
+  background:#f2f2f2;
+}
+
+.container{
+  width:300px;
+  margin:50px auto;
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+}
+
+input, textarea{
+  width:100%;
+  padding:8px;
+  margin:8px 0;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  background:green;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+button:hover{
+  background:darkgreen;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Contact Us</h2>
+
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="email" id="email" placeholder="Your Email">
+  <textarea id="message" placeholder="Your Message"></textarea>
+
+  <button onclick="submitForm()">Send</button>
+
+  <p id="result"></p>
+</div>
+
+<script>
+function submitForm(){
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  if(name === "" || email === "" || message === ""){
+    alert("Please fill all fields");
+  }else{
+    document.getElementById("result").innerText =
+      "Thank you " + name + "! We will contact you soon.";
+  }
+}
+</script>
+
+</body>
+</html>

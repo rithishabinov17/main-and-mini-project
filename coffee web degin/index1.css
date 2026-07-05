@@ -1,0 +1,179 @@
+
+body{
+     margin:0;
+    font-family: Arial, sans-serif;
+background-color: rgb(52,26,12);
+}
+   
+
+
+
+/* Navbar */
+  .navbar{
+
+  
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgb(52,26,12);
+    padding:10px 30px;
+}
+
+/* Logo Section */
+.logo{
+    display:flex;
+    align-items:center;
+    color:white;
+}
+
+.logo img{
+    width:40px;
+    height:40px;
+    margin-right:10px;
+}
+
+.logo span{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* Menu */
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    margin-left:20px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+}
+
+.nav-links a:hover{
+    color:orange;
+}
+.a1{
+    width: 400px;
+    height: 400px;
+    margin-left: 800px;
+    margin-top: -350px;
+}
+h2{
+font-family: 'Courier New', Courier, monospace;
+color: yellow;
+}
+#b{
+    margin-left: 40px;
+    margin-top: 100px;
+}
+p ,h3{
+    color:white;
+}
+button{
+    border-radius:20px ;
+    font-size: larger;
+    outline: none;
+border: none;
+}
+button:hover{
+    background-color: yellow;
+}
+.Rs{
+    width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color:#ecbf66;
+margin-left: 50px;
+margin-top: 70px;
+}
+#er{
+    background-color: white;
+}
+hr{
+    width: 100px;
+    margin-left:130px;
+     border: none;
+  height: 2px;
+  background-color: red;
+margin-top: -15px;
+}margin
+h6{
+    font-size: bold;
+}
+
+
+
+h1{
+    font-weight: bold;
+    margin-left: 100px;    
+}
+.op{
+    margin-left: 700px;
+    margin-top: -350px;
+}
+#i{
+    margin-left: 80px;
+}
+#pd{
+    background-color: black;
+
+}
+
+#io{
+    color: white;
+    text-align: center;
+    
+}
+.oi{
+margin-left: 680px;
+}
+.er
+{
+    margin-left: 40px;
+}
+.re{
+    margin-left: 30px;
+}
+#s2{
+    margin-left: 550px;
+    margin-top: -330px;
+}
+#s3{
+    margin-left: 1000px;
+    margin-top: -320px;
+}
+#s4{
+ margin-left: 30px;
+}
+#s5{
+    margin-left: 550px;
+    margin-top: -330px;
+}
+#s6{
+    margin-left: 1000px;
+    margin-top: -280px;
+}
+#t1{
+    transition:transform 2s;
+}
+#t1:hover{
+    transform: scale(1.5);
+}
+#pd1{
+    background-color: bisque;
+}
+#ios{
+    color: blueviolet;
+    text-align: center;
+}
+select {
+  
+  font-size: 15px;
+  margin-left: 10px;
+
+}
