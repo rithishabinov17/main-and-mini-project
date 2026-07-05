@@ -1,0 +1,261 @@
+
+
+# ================= DAILY TIME ANALYZER =================
+
+from datetime import datetime
+import matplotlib.pyplot as plt
+import pywhatkit
+import time
+  
+
+# -------- FILE SETUP --------
+file = open("mini.txt", "w", encoding="utf-8")
+
+def log(text):
+    print(text)
+    file.write(text + "\n")
+
+log("===== DAILY LIFE TIME ANALYSIS REPORT =====")
+log(f"Date & Time : {datetime.now()}")
+log("==========================================\n")
+
+# ---------- USER ----------
+
+username = input("Enter your name: ")
+
+if username.isalpha():
+    print("Valid name:", username)
+else:
+    print("Please enter only letters")
+log(f"User Name : {username}\n")
+
+# ---------- INPUT + AWARENESS ----------
+
+Night_Sleep = float(input("Night Sleep Hours: "))
+ideal_sleep = 8
+diff = ideal_sleep - Night_Sleep
+
+if Night_Sleep == ideal_sleep:
+    log("Night Sleep : Perfect (8 hrs)")
+elif Night_Sleep < ideal_sleep:
+    log(f"Night Sleep : Low | Need {diff:.1f} more hrs ")
+else:
+    log(f"Night Sleep : Extra | Over by {abs(diff):.1f} hrs ")
+
+exercise_Practice = float(input("Exercise Practice Hours: "))
+ideal_ex = 1
+
+if exercise_Practice >= ideal_ex:
+    log("Exercise : Good ")
+else:
+    log(f"Exercise : Low | Add {ideal_ex - exercise_Practice:.1f} hrs")
+
+Screen_Used_Time = float(input("Screen Used Time Hours: "))
+ideal_screen = 2
+
+if Screen_Used_Time <= ideal_screen:
+    log("Screen Time : Under Control ")
+else:
+    log(f"Screen Time : High | Reduce {Screen_Used_Time - ideal_screen:.1f} hrs ")
+
+Study_type = input("Role of Study (student/work/coding): ").lower()
+
+if Study_type in ["student", "work", "coding"]:
+    print("Valid role:", Study_type)
+else:
+    print("Invalid role! Enter only student / work / coding")
+Study_hours = float(input("Study Hours: "))
+
+if Study_type == "student":
+    ideal = 4
+elif Study_type == "work":
+    ideal = 2
+elif Study_type == "coding":
+    ideal = 3
+else:
+    ideal = 2
+
+if Study_hours == ideal:
+    log(f"{Study_type.title()} Time : Perfect ")
+elif Study_hours < ideal:
+    log(f"{Study_type.title()} Time : Low | Need {ideal - Study_hours:.1f} hrs")
+else:
+    log(f"{Study_type.title()} Time : Extra | Over {Study_hours - ideal:.1f} hrs")
+
+
+Family_spend_Time = float(input("Family Hours: "))
+ideal_family = 2
+
+if Family_spend_Time >= ideal_family:
+    log("Family Time : Good ")
+else:
+    log(f"Family Time : Low | Add {ideal_family - Family_spend_Time:.1f} hrs")
+
+print("------ Family time is emotional investment -----")
+
+print("Select Work Type:")
+print("1. Physical Work")
+print("2. Professional Work")
+print("3. Brain Work")
+
+work_type_choice = input("Enter choice (1/2/3): ")
+work = float(input("Work Hours: "))
+
+ideal_work = 8
+diff = work - ideal_work
+
+if work_type_choice == "1":
+    category = "Physical Work"
+elif work_type_choice == "2":
+    category = "Professional Work"
+elif work_type_choice == "3":
+    category = "Brain Work"
+else:
+    category = "Unknown Work"
+
+log(f"\n--- {category} ---")
+log(f"Work Hours : {work:.1f}")
+
+if work == ideal_work:
+    log("Status : Perfect Balance ")
+elif work < ideal_work:
+    log(f"Status : Low | Need {abs(diff):.1f} hrs")
+else:
+    log(f"Status : Overwork | Reduce {abs(diff):.1f} hrs")
+
+# ---------- TOTAL ----------
+used = Night_Sleep + exercise_Practice + Study_hours + Screen_Used_Time + Family_spend_Time + work
+free = 24 - used
+
+log("\n===== 24 HOUR SUMMARY =====")
+log(f"Used Time : {used:.1f} hrs")
+log(f"Free Time : {free:.1f} hrs")
+
+# ---------- WEEK / MONTH / YEAR ----------
+week_used = used * 7
+month_used = used * 30
+year_used = used * 365
+
+week_free = (24 * 7) - week_used
+month_free = (24 * 30) - month_used
+year_free = (24 * 365) - year_used
+
+log("\n===== LONG TERM ANALYSIS =====")
+log(f"Weekly Used  : {week_used:.1f}")
+log(f"Monthly Used : {month_used:.1f}")
+log(f"Yearly Used  : {year_used:.1f}")
+
+log(f"Weekly Free  : {week_free:.1f}")
+log(f"Monthly Free : {month_free:.1f}")
+log(f"Yearly Free  : {year_free:.1f}")
+
+# ================= BAR CHART =================
+labels = ["Sleep", "Exercise", "Study", "Screen", "Family", "Work"]
+values = [Night_Sleep, exercise_Practice, Study_hours, Screen_Used_Time, Family_spend_Time, work]
+colors = ["blue", "green", "orange", "red", "purple", "cyan"]
+
+plt.figure(figsize=(10, 5))
+bars = plt.bar(labels, values, color=colors)
+
+plt.title("Daily Time Usage Bar Chart")
+plt.xlabel("Activities")
+plt.ylabel("Hours")
+
+for bar in bars:
+    y = bar.get_height()
+    plt.text(bar.get_x(), y + 0.1, f"{y:.1f}", ha="center")
+
+plt.tight_layout()
+plt.show()
+
+# ================= 24H PIE CHART =================
+plt.figure(figsize=(6, 6))
+
+plt.pie(
+    [used, free],
+    labels=["Used Time", "Free Time"],
+    autopct="%1.1f%%",
+    colors=["#ff6666", "#66ff99"],
+    startangle=90
+)
+
+plt.title("24 Hours Used vs Free Time")
+plt.axis("equal")
+plt.show()
+
+# ================= LINE CHART =================
+periods = ["Week", "Month", "Year"]
+
+used_values = [week_used, month_used, year_used]
+free_values = [week_free, month_free, year_free]
+
+plt.figure(figsize=(10, 5))
+plt.plot(periods, used_values, marker="o", label="Used Time", color="red")
+plt.plot(periods, free_values, marker="o", label="Free Time", color="green")
+
+plt.title("Time Analysis (Week vs Month vs Year)")
+plt.xlabel("Period")
+plt.ylabel("Hours")
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# ---------- SAVE ----------
+file.close()
+print("Report saved in rs.txt")
+
+# ================= WHATSAPP =================
+phone_number = input("Enter your WhatsApp number (+91XXXXXXXXXX): ").strip()
+
+whatsapp_report = f"""
+Hello {username}!
+
+Today’s 24 hours Time Summary:
+
+ Night Sleep      : {Night_Sleep:.1f} hrs  
+    Ideal: 8 hrs | Need: {max(0, 8 - Night_Sleep):.1f} hrs more 
+
+ Exercise         : {exercise_Practice:.1f} hrs  
+   Ideal: 1 hr | Need: {max(0, 1 - exercise_Practice):.1f} hr more 
+
+ Screen Time      : {Screen_Used_Time:.1f} hrs  
+    Ideal: 2 hrs | Reduce: {max(0, Screen_Used_Time - 2):.1f} hrs  
+
+Study / Learning : {Study_hours:.1f} hrs  
+   Ideal: 3 hrs | Need: {max(0, 3 - Study_hours):.1f} hrs more 
+
+️ Family Time     : {Family_spend_Time:.1f} hrs  
+   Ideal: 2 hrs | Need: {max(0, 2 - Family_spend_Time):.1f} hrs more 
+
+ Work Time        : {work:.1f} hrs  
+   Ideal: 8 hrs | Need: {max(0, 8 - work):.1f} hrs more 
+
+Total Used : {used:.1f} hrs
+Free Time : {free:.1f} hrs
+Stay consistent, success will follow 
+"""
+
+# Wait to ensure charts are closed
+time.sleep(3)
+
+now = datetime.now()
+hour = now.hour
+minute = now.minute + 2
+
+pywhatkit.sendwhatmsg(
+    phone_number,
+    whatsapp_report,
+    hour,
+    minute,
+    wait_time=10,
+    tab_close=True
+)
+
+print("WhatsApp message scheduled successfully!")
+
+
+
+
+#
