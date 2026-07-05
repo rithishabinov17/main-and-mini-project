@@ -1,0 +1,173 @@
+/* body html */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.body{
+    background-image: url(./image/nnn.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment:fixed;
+height:100vh;
+}
+
+
+/* main navbar */
+.navabar{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    
+    padding: 10px 30px;
+    
+    
+
+}
+/* logo image,logo name */
+.logo{
+    display: flex;
+    align-items: start;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+}
+/* logo,logo image */
+.logo .logoimage{
+    width:60px ;
+    height: 30px;
+margin-top: 10px;
+margin-left:0px;
+
+}
+/* nav-links */
+.nav-links{
+    list-style: none;
+    display: flex;
+}
+/* navlink-li */
+.nav-links li{ 
+margin-left: 20px;
+text-transform: capitalize;
+
+}
+.nav-links a{
+
+text-decoration: none;
+color: white;
+font-size: 16px;}
+
+span{
+    font-size: large;
+    color:white;
+     margin-top:13px;
+    margin-left:0px;
+
+}
+h1 {
+    text-align: center;
+    margin-top: 200px;
+    color: white;
+    
+}
+h5 {
+    text-align: center;
+    margin-top: 20px;
+
+}
+.d{
+    color: white;
+}
+    
+.js{
+text-align: center;
+    margin-top: 10px;
+    color:white
+}
+
+
+h4{
+   
+    margin-left: 530px;
+    color: white;
+    margin-top: 20px;
+    width: 250px;
+    height: 60px;
+    border:2px solid; 
+    border-radius: 10px;
+    padding: 10px;
+   background-color: none; 
+   border-color:white;  
+    
+    
+}
+h1{
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
+.h1{
+    text-align: center;
+    color: black;
+    margin-top: 50px;
+    padding-top: 10px;
+}
+h5{
+    text-align: center;
+    margin-top: 10px;
+    color:black}
+.ui{
+    display: flex;
+    justify-content:space-between;
+  height: 150px;
+padding: 10px;
+    margin-top: 100px;
+}
+#ui{
+    background-color:#ffe275 ;
+border-radius:20px;
+width: 400px;
+height: 150px;
+}
+
+.gr{
+    color: black;
+}
+p{
+    color:grey;
+    margin-top: 30px;
+    padding-left: 10px;
+}
+.gr,p{
+    margin-top: -0px;
+}
+#uid, #uids{
+    background-color:#ffe275 ;
+border-radius:20px;
+width: 400px;
+height: 150px;
+padding: 10px;
+
+
+}
+.grs{
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+}
+.b{
+    margin-left: 550px;
+    color: grey;
+    margin-top: 20px;
+}
+.s{
+    color: black;
+    margin-left: 10px;
+
+}
+.m{
+
+    display: flex;
+    justify-content: space-between;
+}
